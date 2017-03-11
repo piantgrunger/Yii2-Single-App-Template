@@ -36,8 +36,9 @@ If you do not have Composer, you may install it by following the instructions at
 
 You can then install this project template using the following command:
 
-php composer.phar global require "fxp/composer-asset-plugin:~1.1.0"
-php composer.phar create-project --prefer-dist --stability=dev piantgrunger/yii2-single-app-template single
+>php composer.phar global require "fxp/composer-asset-plugin:~1.1.0
+>
+>php composer.phar create-project --prefer-dist --stability=dev piantgrunger/yii2-single-app-template single
 
 CONFIGURATION
 --------------
