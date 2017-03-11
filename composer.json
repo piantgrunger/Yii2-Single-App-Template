@@ -1,6 +1,11 @@
 {
-    "name": "PiantGrunger-Yii2-Single-App-Template",
+    "name": "Piantgrunger/Yii2-Single-App-Template",
     "description": "Yii 2 Single AdminLTE Project Template",
+    "authors": [
+        {
+            "name": "Alfian Naufal",
+            "email": "piant.grunger@gmail.com"
+        }],
     "keywords": ["yii2", "framework", "single", "project template"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
