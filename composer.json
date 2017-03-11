@@ -11,10 +11,10 @@
     "type": "project",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/hscstudio/yii2-app-single/issues?state=open",
+        "issues": "https://github.com/piantgrunger/Yii2-Single-App-Template/issues?state=open",
         "forum": "http://www.yiiframework.com/forum/",
-        "wiki": "https://github.com/hscstudio/yii2-app-single/wiki",
-        "source": "https://github.com/hscstudio/yii2-app-single"
+        "wiki": "https://github.com/piantgrunger/Yii2-Single-App-Template/wiki",
+        "source": "https://github.com/piantgrunger/Yii2-Single-App-Template"
     },
     "minimum-stability": "dev",
     "require": {
