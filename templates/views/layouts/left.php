@@ -10,15 +10,19 @@ $menuItems =
                         'url' => '#',
                         'items' => [
                     ['label' => 'App. Route', 'icon' =>  'fa fa-circle-o', 'url' => ['/mimin/route/'],'visible' => !Yii::$app->user->isGuest],
-                    ['label' => 'Role', 'icon' =>  'fa fa-circle-o', 'url' => ['@web/mimin/role/'],'visible' => !Yii::$app->user->isGuest],
-                    ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['@web/mimin/user/'],'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'Role', 'icon' =>  'fa fa-circle-o', 'url' => ['/mimin/role/'],'visible' => !Yii::$app->user->isGuest],
+                    ['label' => 'User', 'icon' => ' fa fa-circle-o', 'url' => ['/mimin/user/'],'visible' => !Yii::$app->user->isGuest],
                    ]]
                         ,
-                   
+                ];     
                 
-                ];
- $menuItems = Mimin::filterMenu($menuItems);
-        
+ if (!Yii::$app->user->isGuest)
+{             
+ if (Yii::$app->user->identity->username !== 'admin') 
+{
+  $menuItems = Mimin::filterMenu($menuItems);
+};
+}        
 ?>
 <aside class="main-sidebar">
 
