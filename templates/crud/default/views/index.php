@@ -14,6 +14,7 @@ echo "<?php\n";
 ?>
 
 
+use hscstudio\mimin\components\Mimin;
 use yii\helpers\Html;
 use <?= $generator->indexWidgetType === 'grid' ? "kartik\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
 <?= $generator->enablePjax ? 'use yii\widgets\Pjax;' : '' ?>
@@ -50,7 +51,9 @@ if (($tableSchema = $generator->getTableSchema()) === false) {
 }
 ?>
 
-        <?php echo  " ['class' => 'yii\grid\ActionColumn'],];"?>
+        <?php echo  " ['class' => 'yii\grid\ActionColumn',   'template' => Mimin::filterActionColumn([
+              'update','delete','view'],".
+                '$this->context->route),    ],    ];'?>
 <?php  
  echo ' echo ExportMenu::widget(['.
     '\'dataProvider\' => $dataProvider,'.
@@ -74,8 +77,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <?= "    <?php " . ($generator->indexWidgetType === 'grid' ? "// " : "") ?>echo $this->render('_search', ['model' => $searchModel]); ?>
 <?php endif; ?>
 
-    <p>
-        <?= "<?= " ?>Html::a(<?= $generator->generateString(Inflector::camel2words(StringHelper::basename($generator->modelClass).' Baru')) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+    <p> <?php echo '<?php if ((Mimin::checkRoute($this->context->id."/create"))){ ?>'; ?>
+        <?= "<?=  " ?>Html::a(<?= $generator->generateString(Inflector::camel2words(StringHelper::basename($generator->modelClass).' Baru')) ?>, ['create'], ['class' => 'btn btn-success']) ?>
+    <?="<?php } ?>" ?>
     </p>
 
 <?php if ($generator->indexWidgetType === 'grid'): ?>

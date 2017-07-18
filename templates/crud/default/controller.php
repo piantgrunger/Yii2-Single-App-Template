@@ -142,9 +142,17 @@ class <?= $controllerClass ?> extends <?= StringHelper::basename($generator->bas
      */
     public function actionDelete(<?= $actionParams ?>)
     {
+        
+       try
+      {
         $this->findModel(<?= $actionParams ?>)->delete();
-
-        return $this->redirect(['index']);
+      
+      }
+      catch(\yii\db\IntegrityException  $e)
+      {
+	Yii::$app->session->setFlash('error', "Data Tidak Dapat Dihapus Karena Dipakai Modul Lain");
+       } 
+         return $this->redirect(['index']);
     }
 
     /**

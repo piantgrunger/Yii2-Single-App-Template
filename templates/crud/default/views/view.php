@@ -15,6 +15,7 @@ echo "<?php\n";
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use hscstudio\mimin\components\Mimin;
 
 /* @var $this yii\web\View */
 /* @var $model <?= ltrim($generator->modelClass, '\\') ?> */
@@ -28,7 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= "<?= " ?>Html::encode($this->title) ?></h1>
 
     <p>
+             <?php echo '<?php if ((Mimin::checkRoute($this->context->id."/update"))){ ?>'; ?>
         <?= "<?= " ?>Html::a(<?= $generator->generateString('Ubah') ?>, ['update', <?= $urlParams ?>], ['class' => 'btn btn-primary']) ?>
+        <?php echo '<?php } if ((Mimin::checkRoute($this->context->id."/delete"))){ ?>'; ?>
         <?= "<?= " ?>Html::a(<?= $generator->generateString('Hapus') ?>, ['delete', <?= $urlParams ?>], [
             'class' => 'btn btn-danger',
             'data' => [
@@ -36,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?="<?php } ?>"?>
     </p>
 
     <?= "<?= " ?>DetailView::widget([
