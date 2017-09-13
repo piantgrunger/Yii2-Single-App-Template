@@ -68,7 +68,7 @@ http://localhost/single/web/
 NOTES:
 ------
 
- there is build in user and password in this application : username = admin password = admin
+ there is build in user and password in this application : username = admin password = admin1234
 Check and edit the other files in the config/ directory to customize your application as required.
 Refer to the README in the tests direcotry for information specific to basic application tests.
 
