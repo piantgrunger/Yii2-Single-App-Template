@@ -24,7 +24,7 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-nav-x": "*",
         "bower-asset/sweetalert": "1.1.*",
-        "dmstr/yii2-adminlte-asset": "2.4.4",
+        "dmstr/yii2-adminlte-asset": "2.4.*",
         "kartik-v/yii2-widget-select2": "*",
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-mpdf": "@dev",
